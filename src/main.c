@@ -21,8 +21,9 @@ void init_colors(void)
     init_pair(1, COLOR_WHITE, COLOR_BLACK);
     init_pair(2, COLOR_MAGENTA, COLOR_YELLOW);
     init_pair(3, COLOR_RED, COLOR_RED);
-    init_pair(4, COLOR_BLUE, COLOR_GREEN);
+    init_pair(4, COLOR_BLUE, COLOR_BLUE);
     init_pair(5, COLOR_CYAN, COLOR_CYAN);
+    init_pair(6, COLOR_BLUE, COLOR_GREEN);
 }
 
 void close_game(void)

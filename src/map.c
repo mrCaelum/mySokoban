@@ -54,6 +54,14 @@ int get_map(map_t *map, char const *pathname, unsigned int const filesize)
     return (fill_map(map, buffer, filesize));
 }
 
+static int get_box_color(map_t const *map, unsigned int x, unsigned int y)
+{
+    for (unsigned int i = 0; i < map->boxes_number; i++)
+        if (map->boxes[i].pos.x == x && map->boxes[i].pos.y == y)
+            return (map->boxes[i].on == 'O' ? 6 : 4);
+    return (4);
+}
+
 int print_map(map_t const *map)
 {
     clear();
@@ -61,7 +69,7 @@ int print_map(map_t const *map)
         for (unsigned int x = 0; x < map->width; x++) {
             attron(COLOR_PAIR(map->map[y][x] == 'P' ? 2
             : map->map[y][x] == '#' ? 3
-            : map->map[y][x] == 'X' ? 4
+            : map->map[y][x] == 'X' ? get_box_color(map, x, y)
             : map->map[y][x] == 'O' ? 5 : 1));
             printw("%s", map->map[y][x] == 'P' ? "**" : "  ");
         }

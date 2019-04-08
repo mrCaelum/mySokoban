@@ -24,8 +24,8 @@
 #define DESC3 " and 'O' for storage locations.\n"
 
 typedef struct position {
-    int x;
-    int y;
+    unsigned int x;
+    unsigned int y;
 } position_t;
 
 typedef struct element {
