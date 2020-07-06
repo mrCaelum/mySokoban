@@ -67,7 +67,7 @@ static int victory(map_t *map, element_t *player)
 
 int game_loop(map_t *map, element_t *player)
 {
-    int key;
+    int key = 0;
     WINDOW *window = newwin(HEIGHT, WIDTH, 12 - HEIGHT / 2, 40 - WIDTH / 2);
 
     keypad(window, TRUE);
